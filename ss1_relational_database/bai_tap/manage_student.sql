@@ -1,29 +1,29 @@
-create database manage_student;
-use manage_student;
-create table student(
-id int primary key,
-`name` varchar(50)
+ CREATE DATABASE manage_student;
+    USE manage_student;
+    CREATE TABLE student(
+            id INT primary key,
+`name` VARCHAR(50)
 );
-create table teacher(
-id int primary key,
-`name` varchar(50),
-age int,
-country varchar(50)
+    CREATE TABLE teacher(
+            id INT primary key,
+`name` VARCHAR(50),
+    age INT,
+    country VARCHAR(50)
 );
 -- thêm dữ liệu
-insert into student value (1,"Khang"),
+    INSERT INTO student value (1,"Khang"),
 						  (2,"An");
-insert into teacher value (1,"Chanh",35,"Vietnam"),
+    INSERT INTO teacher value (1,"Chanh",35,"Vietnam"),
 						  (2,"Son",29,"Vietnam");
 -- hiển thị
-select * from student;
-select * from teacher;
+    SELECT * FROM student;
+    SELECT * FROM teacher;
 -- chỉnh sửa dữ liệu
-update student set name="Khanh" where id=2;
+    UPDATE student SET name="Khanh" where id=2;
 -- xóa dữ liệu
-delete from student where id=2;
--- ddl=> thêm cột point
-alter table student add column `point` int;
+    DELETE FROM student where id=2;
+-- ddl=> thêm cột poINT
+    ALTER TABLE student add column `poINT` INT;
 -- xóa bảng
-drop table student;
-drop table teacher;
+    DROP TABLE student;
+    DROP TABLE teacher;
