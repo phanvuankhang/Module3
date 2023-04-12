@@ -47,7 +47,8 @@ CREATE TABLE chi_tiet_don_dat_hang (
     PRIMARY KEY (ma_vat_tu , so_don_hang),
     FOREIGN KEY (ma_vat_tu)REFERENCES vat_tu (ma_vat_tu),
     FOREIGN KEY (so_don_hang) REFERENCES don_dat_hang (so_don_hang)
-);CREATE TABLE sdt (
+);
+CREATE TABLE sdt (
     so_dien_thoai INT(10) PRIMARY KEY,
     ma_nha_cung_cap VARCHAR(45),
     foreign key (ma_nha_cung_cap) references nha_cung_cap(ma_nha_cung_cap)
