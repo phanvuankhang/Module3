@@ -1,26 +1,26 @@
 CREATE DATABASE sale_manager;
 USE sale_manager;
 CREATE TABLE customer(
-id INT AUTO_INCREMENT PRIMARY KEY,
-`name` VARCHAR(20),
-age INT
+customer_id INT AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(25),
+age TINYINT
 );
 CREATE TABLE `order`(
-id INT AUTO_INCREMENT PRIMARY KEY,
-`date` DATE,
-total_price FLOAT,
+order_id INT AUTO_INCREMENT PRIMARY KEY,
 customer_id INT,
-FOREIGN KEY(customer_id) REFERENCES customer(id)
+`date` DATETIME,
+total_price INT,
+FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
 );
 CREATE TABLE product(
-id INT AUTO_INCREMENT PRIMARY KEY,
-`name` VARCHAR(20),
-price FLOAT
+product_id INT AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(25),
+price INT
 );
-CREATE TABLE oder_detail(
-dqty INT,
-oder_id INT,
-FOREIGN KEY (oder_id) REFERENCES `order`(id),
+CREATE TABLE order_detail(
+order_id INT,
 product_id INT,
-FOREIGN KEY (product_id) REFERENCES product(id)
+dqty INT,
+FOREIGN KEY (order_id) REFERENCES `order`(order_id),
+FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
