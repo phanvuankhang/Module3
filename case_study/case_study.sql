@@ -168,7 +168,10 @@
             ma_hop_dong_chi_tiet INT PRIMARY KEY,
             so_luong INT,
             ma_hop_dong INT,
-            ma_dich_vu_di_kem INT);
+            ma_dich_vu_di_kem INT,
+            FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
+            FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)
+            );
     INSERT INTO hop_dong_chi_tiet VALUES(1,5,2,4),
 								   (2,8,3,5),
                                            (3,7,2,6),
