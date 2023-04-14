@@ -13,6 +13,6 @@ SET SQL_SAFE_UPDATES =0;
 UPDATE student SET class_id=2 WHERE student_name='Hung';
 SET SQL_SAFE_UPDATES =1;
 -- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
-SELECT student.student_name, `subject`.sub_name, mark.mark
-FROM (student JOIN (mark JOIN `subject` ON mark.sub_id = `subject`.sub_id) ON mark.student_id = student.student_id)
+SELECT student.student_name, `subject`.sub_name, marks.mark
+FROM (student JOIN (marks JOIN `subject` ON marks.sub_id = `subject`.sub_id) ON marks.student_id = student.student_id)
 ORDER BY mark DESC, student_name;

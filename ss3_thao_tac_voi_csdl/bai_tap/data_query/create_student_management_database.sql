@@ -21,7 +21,7 @@ sub_name VARCHAR(30) NOT NULL,
 credit TINYINT NOT NULL DEFAULT 1 CHECK (credit>=1),
 `status` BIT	
 );
-CREATE TABLE mark(
+CREATE TABLE marks(
 mark_id INT PRIMARY KEY AUTO_INCREMENT,
 mark FLOAT DEFAULT 0 CHECK (mark BETWEEN 0 and 100),
 sub_id INT NOT NULL,
