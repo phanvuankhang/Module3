@@ -2,7 +2,7 @@
     USE furama;
     CREATE TABLE vi_tri (
             ma_vi_tri INT PRIMARY KEY,
-            ten_vi_tri VARCHAR(45)
+            ten_vi_tri VARCHAR(45) NOT NULL
 );
     INSERT INTO vi_tri VALUES (1,"Quản lý"),
 						 (2,"Nhân viên");
@@ -20,7 +20,7 @@
 
     CREATE TABLE bo_phan(
             ma_bo_phan INT PRIMARY KEY,
-            ten_bo_phan VARCHAR(45)
+            ten_bo_phan VARCHAR(45) NOT NULL
 );
     INSERT INTO bo_phan VALUES(1,"Sale-Marketing"),
 						 (2,"Hành chính"),
@@ -30,11 +30,11 @@
 
     CREATE TABLE nhan_vien(
             ma_nhan_vien INT PRIMARY KEY,
-            ho_ten VARCHAR(45),
-    ngay_sinh DATE,
-    so_cmnd VARCHAR(45),
+            ho_ten VARCHAR(45) NOT NULL,
+    ngay_sinh DATE NOT NULL,
+    so_cmnd VARCHAR(45) NOT NULL,
     luong DOUBLE,
-    so_dien_thoai VARCHAR(45),
+    so_dien_thoai VARCHAR(45) NOT NULL,
     email VARCHAR(45),
     dia_chi VARCHAR(45),
     ma_vi_tri INT,FOREIGN KEY(ma_vi_tri) REFERENCES vi_tri(ma_vi_tri),
@@ -55,7 +55,7 @@
 
     CREATE TABLE loai_khach(
             ma_loai_khach INT PRIMARY KEY,
-            ten_loai_khach VARCHAR(50)
+            ten_loai_khach VARCHAR(50) NOT NULL
 );
     INSERT INTO loai_khach VALUES(1,"Diamond"),
 							(2,"Platinium"),
@@ -66,11 +66,11 @@
 
     CREATE TABLE khach_hang(
             ma_khach_hang INT PRIMARY KEY,
-            ho_ten VARCHAR(45),
-    ngay_sinh DATE,
+            ho_ten VARCHAR(45) NOT NULL,
+    ngay_sinh DATE NOT NULL,
     gioi_tinh BIT(1),
-    so_cmnd VARCHAR(45),
-    so_dien_thoai VARCHAR(45),
+    so_cmnd VARCHAR(45) NOT NULL,
+    so_dien_thoai VARCHAR(45) NOT NULL,
     email VARCHAR(45),
     dia_chi VARCHAR(45),
     ma_loai_khach INT, FOREIGN KEY(ma_loai_khach)REFERENCES loai_khach(ma_loai_khach)
@@ -89,7 +89,7 @@
 
     CREATE TABLE kieu_thue (
             ma_kieu_thue INT PRIMARY KEY,
-            ten_kieu_thue VARCHAR(45)
+            ten_kieu_thue VARCHAR(45) NOT NULL
 );
     INSERT INTO kieu_thue VALUES(1,"year"),
 						   (2,"month"),
@@ -99,7 +99,7 @@
 
     CREATE TABLE loai_dich_vu(
             ma_loai_dich_vu INT PRIMARY KEY,
-            ten_loai_dich_vu VARCHAR(45)
+            ten_loai_dich_vu VARCHAR(45) NOT NULL
 );
     INSERT INTO loai_dich_vu VALUES(1,"Ville"),
 							  (2,"House"),
@@ -109,13 +109,13 @@
     CREATE TABLE dich_vu(
             ma_dich_vu INT PRIMARY KEY,
             ten_dich_vu VARCHAR(45),
-    dien_tich DOUBLE,
-    chi_phi_thue DOUBLE,
+    dien_tich DOUBLE NOT NULL,
+    chi_phi_thue DOUBLE NOT NULL,
     so_nguoi_toi_da INT,
-    tieu_chuan_phong VARCHAR(45),
+    tieu_chuan_phong VARCHAR(45) NOT NULL,
     mo_ta_tien_nghi_khac VARCHAR(45),
     dien_tich_ho_boi DOUBLE,
-    so_tang INT,
+    so_tang INT ,
     dich_vu_mien_phi_di_kem VARCHAR(45),
     ma_kieu_thue INT, FOREIGN KEY(ma_kieu_thue)REFERENCES kieu_thue(ma_kieu_thue),
     ma_loai_dich_vu INT ,FOREIGN KEY(ma_loai_dich_vu)REFERENCES loai_dich_vu(ma_loai_dich_vu)
@@ -130,10 +130,10 @@
 
     CREATE TABLE dich_vu_di_kem(
             ma_dich_vu_di_kem INT PRIMARY KEY,
-            ten_dich_vu_di_kem VARCHAR(45),
-    gia DOUBLE,
-    don_vi VARCHAR(45),
-    trang_thai VARCHAR(45)
+            ten_dich_vu_di_kem VARCHAR(45) NOT NULL,
+    gia DOUBLE NOT NULL,
+    don_vi VARCHAR(45) NOT NULL,
+    trang_thai VARCHAR(45) NOT NULL
 );
     INSERT INTO dich_vu_di_kem VALUES(1,"Karaoke",10000,"giờ","tiện nghi,hiện tại"),
 								(2,"Thuê xe máy ",10000,"chiếc","hỏng 1 xe"),
@@ -145,30 +145,32 @@
 
     CREATE TABLE hop_dong(
             ma_hop_dong INT PRIMARY KEY,
-            ngay_lam_hop_dong DATE,
-            ngay_ket_thuc DATE,
-            tien_dat_coc DOUBLE,
+            ngay_lam_hop_dong DATE NOT NULL,
+            ngay_ket_thuc DATE NOT NULL,
+            tien_dat_coc DOUBLE NOT NULL,
             ma_nhan_vien INT, FOREIGN KEY(ma_nhan_vien)REFERENCES nhan_vien(ma_nhan_vien),
     ma_khach_hang INT, FOREIGN KEY(ma_khach_hang)REFERENCES khach_hang(ma_khach_hang),
     ma_dich_vu INT,FOREIGN KEY (ma_dich_vu)REFERENCES dich_vu(ma_dich_vu)
             );
-    INSERT INTO hop_dong VALUES (1,"2023-11-04","2023-12-04",0,3,1,3),
-						   (2,"2023-01-04","2023-05-04",200000,7,3,1),
-                                   (3,"2023-06-04","2023-10-04",500000,3,4,2),
-                                   (4,"2023-12-03","2023-12-03",1000000,7,5,5),
-                                   (5,"2021-12-09","2021-12-09",0,7,2,6),
-                                   (6,"2021-01-08","2021-05-08",600000,7,7,6),
-                                   (7,"2023-02-06","2023-12-06",700000,7,4,4),
-                                   (8,"2023-02-03","2023-03-02",1000000,3,4,1),
-                                   (9,"2023-11-04","2023-12-04",300000,3,4,3),
-                                   (10,"2022-11-06","2022-12-06",50000,10,3,5);
+    INSERT INTO hop_dong VALUES (1,'2020-12-08','2020-12-08',0,3,1,3),
+(2,'2020-07-14','2020-07-21',200000,7,3,1),
+(3,'2021-03-15','2021-03-17',50000,3,4,2),
+(4,'2021-01-14','2021-01-18',100000,7,5,5),
+(5,'2021-07-14','2021-07-15',0,7,2,6),
+(6,'2021-06-01','2021-06-03',0,7,7,6),
+(7,'2021-09-02','2021-09-05',100000,7,4,4),
+(8,'2021-06-17','2021-06-18',150000,3,4,1),
+(9,'2020-11-19','2020-11-19',0,3,4,3),
+(10,'2021-04-12','2021-04-14',0,10,3,5),
+(11,'2021-04-25','2021-04-25',0,2,2,1),
+(12,'2021-05-25','2021-05-27',0,7,10,1);
     SELECT * FROM hop_dong;
 
     CREATE TABLE hop_dong_chi_tiet(
             ma_hop_dong_chi_tiet INT PRIMARY KEY,
-            so_luong INT,
-            ma_hop_dong INT,
-            ma_dich_vu_di_kem INT,
+            so_luong INT NOT NULL,
+            ma_hop_dong INT NOT NULL,
+            ma_dich_vu_di_kem INT NOT NULL,
             FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
             FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)
             );
