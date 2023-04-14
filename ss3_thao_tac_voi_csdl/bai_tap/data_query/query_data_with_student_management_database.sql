@@ -1,7 +1,7 @@
 USE student_management;
 -- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’
 SELECT * FROM student
-WHERE student_name LIKE '%h%';
+WHERE student_name LIKE 'h%';
 -- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
 SELECT * FROM class
 WHERE month(star_date)='12';

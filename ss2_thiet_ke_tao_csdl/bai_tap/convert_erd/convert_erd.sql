@@ -34,7 +34,7 @@ CREATE TABLE nha_cung_cap (
     ma_nha_cung_cap VARCHAR(45) PRIMARY KEY,
     ten_nha_cung_cap VARCHAR(45) NOT NULL,
     dia_chi VARCHAR(45) NOT NULL,
-    so_dien_thoai VARCHAR(10) PRIMARY KEY
+    so_dien_thoai VARCHAR(10) NOT NULL
 );
 CREATE TABLE don_dat_hang (
     so_don_hang INT PRIMARY KEY,
