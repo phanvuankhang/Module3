@@ -7,7 +7,8 @@ FROM
 WHERE
     ho_ten LIKE 'H%' OR ho_ten LIKE 'T%'
         OR ho_ten LIKE 'K%'
-        AND LENGTH(ho_ten) <= 15 tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
+        AND LENGTH(ho_ten) <= 15;
+-- 3.	Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 SELECT 
     *
 FROM
