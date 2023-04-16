@@ -60,12 +60,12 @@ ORDER BY
 -- Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
 
 SELECT
-	hop_dong.ma_hop_dong,
-    hop_dong.ngay_lam_hop_dong,
-    hop_dong.ngay_ket_thuc,
-    hop_dong.tien_dat_coc,
-    sum(ifnull(hop_dong_chi_tiet.so_luong,0)) AS so_luong_dich_vu_di_kem
+	hd.ma_hop_dong,
+    hd.ngay_lam_hop_dong,
+    hd.ngay_ket_thuc,
+    hd.tien_dat_coc,
+    sum(ifnull(hdct.so_luong,0)) AS so_luong_dich_vu_di_kem
 FROM
-	hop_dong LEFT JOIN hop_dong_chi_tiet ON hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+	hop_dong hd LEFT JOIN hop_dong_chi_tiet hdct ON hd.ma_hop_dong = hdct.ma_hop_dong
 GROUP BY
-	hop_dong.ma_hop_dong;
+	hd.ma_hop_dong;
