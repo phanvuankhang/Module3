@@ -47,7 +47,7 @@ SELECT
     dvdk.ten_dich_vu_di_kem,
     sum(hdct.so_luong) AS so_luong_dich_vu_di_kem
 FROM
-	hop_dong_chi_tiet hdct INNer JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+	hop_dong_chi_tiet hdct INNER JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
 GROUP BY
 	hdct.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem
 HAVING
