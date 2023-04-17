@@ -4,10 +4,10 @@ SELECT
 	dvdk.ma_dich_vu_di_kem,
     dvdk.ten_dich_vu_di_kem
 FROM
-	khach_hang kh JOIN loai_khach lk ON kh.ma_loai_khach = lk.ma_loai_khach
-    JOIN hop_dong hd ON hd.ma_khach_hang = kh.ma_khach_hang
-    JOIN hop_dong_chi_tiet hdct ON hdct.ma_hop_dong = hd.ma_hop_dong
-    JOIN dich_vu_di_kem dvdk ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+	khach_hang kh INNER JOIN loai_khach lk ON kh.ma_loai_khach = lk.ma_loai_khach
+    INNER JOIN hop_dong hd ON hd.ma_khach_hang = kh.ma_khach_hang
+    INNER JOIN hop_dong_chi_tiet hdct ON hdct.ma_hop_dong = hd.ma_hop_dong
+    INNER JOIN dich_vu_di_kem dvdk ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
 WHERE
 	lk.ten_loai_khach = 'Diamond'
     AND
@@ -26,9 +26,9 @@ SELECT
     sum(ifnull(hdct.so_luong,0)) AS so_luong_dich_vu_di_kem,
     hd.tien_dat_coc
 FROM
-	hop_dong hd JOIN khach_hang kh ON hd.ma_khach_hang = kh.ma_khach_hang
-    JOIN nhan_vien nv ON nv.ma_nhan_vien = hd.ma_nhan_vien
-    JOIN dich_vu dv ON dv.ma_dich_vu = hd.ma_dich_vu
+	hop_dong hd INNER JOIN khach_hang kh ON hd.ma_khach_hang = kh.ma_khach_hang
+    INNER JOIN nhan_vien nv ON nv.ma_nhan_vien = hd.ma_nhan_vien
+    INNER JOIN dich_vu dv ON dv.ma_dich_vu = hd.ma_dich_vu
     LEFT JOIN hop_dong_chi_tiet hdct ON hdct.ma_hop_dong = hd.ma_hop_dong
 WHERE
 	hd.ngay_lam_hop_dong BETWEEN '2020-10-01' AND '2020-12-31'
@@ -47,7 +47,7 @@ SELECT
     dvdk.ten_dich_vu_di_kem,
     sum(hdct.so_luong) AS so_luong_dich_vu_di_kem
 FROM
-	hop_dong_chi_tiet hdct JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+	hop_dong_chi_tiet hdct INNer JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
 GROUP BY
 	hdct.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem
 HAVING
@@ -69,10 +69,10 @@ SELECT
     dvdk.ten_dich_vu_di_kem,
     count(hdct.ma_dich_vu_di_kem) AS so_lan_su_dung
 FROM
-	hop_dong hd JOIN dich_vu dv ON hd.ma_dich_vu = dv.ma_dich_vu
-    JOIN loai_dich_vu ldv ON dv.ma_loai_dich_vu = ldv.ma_loai_dich_vu
-    JOIN hop_dong_chi_tiet hdct ON hd.ma_hop_dong = hdct.ma_hop_dong
-    JOIN dich_vu_di_kem dvdk ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+	hop_dong hd INNER JOIN dich_vu dv ON hd.ma_dich_vu = dv.ma_dich_vu
+    INNER JOIN loai_dich_vu ldv ON dv.ma_loai_dich_vu = ldv.ma_loai_dich_vu
+    INNER JOIN hop_dong_chi_tiet hdct ON hd.ma_hop_dong = hdct.ma_hop_dong
+    INNER JOIN dich_vu_di_kem dvdk ON dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
 GROUP BY
 	hdct.ma_dich_vu_di_kem
 HAVING
@@ -89,9 +89,9 @@ SELECT
     nv.so_dien_thoai,
     nv.dia_chi
 FROM
-	nhan_vien nv JOIN hop_dong hd ON hd.ma_nhan_vien = nv.ma_nhan_vien
-    JOIN trinh_do td ON nv.ma_trinh_do = td.ma_trinh_do
-    JOIN bo_phan bp ON nv.ma_bo_phan = bp.ma_bo_phan
+	nhan_vien nv INNER JOIN hop_dong hd ON hd.ma_nhan_vien = nv.ma_nhan_vien
+    INNER JOIN trinh_do td ON nv.ma_trinh_do = td.ma_trinh_do
+    INNER JOIN bo_phan bp ON nv.ma_bo_phan = bp.ma_bo_phan
 GROUP BY
 	hd.ma_nhan_vien
 HAVING
