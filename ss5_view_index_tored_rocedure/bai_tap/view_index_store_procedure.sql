@@ -19,7 +19,7 @@ EXPLAIN SELECT * FROM products WHERE product_code=2;
 
 -- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
 CREATE INDEX i_product_price ON products(product_name,product_price);
-EXPLAIN SELECT * FROM products WHERE product_name='IPHONE !#' AND product_price=10000; 
+EXPLAIN SELECT * FROM products WHERE product_name='IPHONE 13' AND product_price=10000; 
 
 -- Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products.
 CREATE VIEW w_products AS 
