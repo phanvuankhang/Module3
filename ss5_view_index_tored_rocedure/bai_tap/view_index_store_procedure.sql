@@ -14,11 +14,11 @@ INSERT INTO products VALUES (1,'IP7','IPHONE 7',1000,10,'WHITE','Còn hàng'),
 	(3,'IP13','IPHONE 13',10000,10,'BLUE','Còn hàng');
 
 -- Tạo Unique Index trên bảng Products (sử dụng cột productCode để tạo chỉ mục)
-CREATE INDEX i_product_code ON products (product_code);
+CREATE UNIQUE INDEX i_product_code ON products (product_code);
 EXPLAIN SELECT * FROM products WHERE product_code=2;
 
 -- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
-CREATE INDEX i_product_price ON products(product_name,product_price);
+CREATE  INDEX i_product_price ON products(product_name,product_price);
 EXPLAIN SELECT * FROM products WHERE product_name='IPHONE 13' AND product_price=10000; 
 
 -- Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products.
@@ -33,7 +33,7 @@ UPDATE w_products SET product_price='3000' WHERE product_price='2000';
 SET SQL_SAFE_UPDATES =1;
 
 -- Tiến hành xoá view
-DROP VIEW W_products;
+DROP VIEW w_products;
 
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
 DELIMITER //
