@@ -1,10 +1,10 @@
-@media only screen and (min-width: 741px) {
+@media only screen and (min-width: 1241px) {
     .col-l-1 {
-        width: 8.33%;
+        width: 8.33333%;
     }
 
     .col-l-2 {
-        width: 16.66%;
+        width: 16.66667%;
     }
 
     .col-l-3 {
@@ -12,11 +12,11 @@
     }
 
     .col-l-4 {
-        width: 33.33%;
+        width: 33.33333%;
     }
 
     .col-l-5 {
-        width: 41.66%;
+        width: 41.66667%;
     }
 
     .col-l-6 {
@@ -24,11 +24,11 @@
     }
 
     .col-l-7 {
-        width: 58.33%;
+        width: 58.33333%;
     }
 
     .col-l-8 {
-        width: 66.66%;
+        width: 66.66667%;
     }
 
     .col-l-9 {
@@ -36,11 +36,11 @@
     }
 
     .col-l-10 {
-        width: 83.33%;
+        width: 83.33333%;
     }
 
     .col-l-11 {
-        width: 91.66%;
+        width: 91.66667%;
     }
 
     .col-l-12 {
@@ -48,13 +48,14 @@
     }
 }
 
-@media only screen and (max-width: 740px) {
+
+@media only screen and (min-width: 741px)and (max-width: 1240px) {
     .col-m-1 {
-        width: 8.33%;
+        width: 8.33333%;
     }
 
     .col-m-2 {
-        width: 16.66%;
+        width: 16.66667%;
     }
 
     .col-m-3 {
@@ -62,11 +63,11 @@
     }
 
     .col-m-4 {
-        width: 33.33%;
+        width: 33.33333%;
     }
 
     .col-m-5 {
-        width: 41.66%;
+        width: 41.66667%;
     }
 
     .col-m-6 {
@@ -74,11 +75,11 @@
     }
 
     .col-m-7 {
-        width: 58.33%;
+        width: 58.33333%;
     }
 
     .col-m-8 {
-        width: 66.66%;
+        width: 66.66667%;
     }
 
     .col-m-9 {
@@ -86,63 +87,63 @@
     }
 
     .col-m-10 {
-        width: 83.33%;
+        width: 83.33333%;
     }
 
     .col-m-11 {
-        width: 91.66%;
+        width: 91.66667%;
     }
 
     .col-m-12 {
         width: 100%;
     }
-
-    #main {
-        height: 500px;
-        margin-top: 50px;
-    }
-
-    .title-content, .content1, .content2 {
-        text-align: justify;
-        padding: 0px 10px;
-    }
-
-    .left {
-        height: 580px;
-    }
-
-    .right {
-        height: 500px;
-    }
-
-    .right .right-1,
-    .right-2 {
-        height: 50%;
-    }
-
-    .right .right-1 {
-        background-color: rgb(219, 219, 219);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .right .right-2 {
-        background-color: #ffffff;
-    }
-
-    .right .right-1 .ads {
-        height: 100%;
-    }
 }
 
-@media only screen and (max-width: 551px) {
+#main {
+    height: 500px;
+    margin-top: 50px;
+}
+
+.title-content, .content1, .content2 {
+    text-align: justify;
+    padding: 0px 10px;
+}
+
+.left {
+    height: 580px;
+}
+
+.right {
+    height: 500px;
+}
+
+.right .right-1,
+.right-2 {
+    height: 50%;
+}
+
+.right .right-1 {
+    background-color: rgb(219, 219, 219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right .right-2 {
+    background-color: #ffffff;
+}
+
+.right .right-1 .ads {
+    height: 100%;
+}
+
+@media only screen and (max-width: 740px ) {
     .col-s-1 {
-        width: 8.33%;
+        width: 8.33333%;
     }
 
     .col-s-2 {
-        width: 16.66%;
+        width: 16.66667%;
     }
 
     .col-s-3 {
@@ -150,11 +151,11 @@
     }
 
     .col-s-4 {
-        width: 33.33%;
+        width: 33.33333%;
     }
 
     .col-s-5 {
-        width: 41.66%;
+        width: 41.66667%;
     }
 
     .col-s-6 {
@@ -162,11 +163,11 @@
     }
 
     .col-s-7 {
-        width: 58.33%;
+        width: 58.33333%;
     }
 
     .col-s-8 {
-        width: 66.66%;
+        width: 66.66667%;
     }
 
     .col-s-9 {
@@ -174,11 +175,11 @@
     }
 
     .col-s-10 {
-        width: 83.33%;
+        width: 83.33333%;
     }
 
     .col-s-11 {
-        width: 91.66%;
+        width: 91.66667%;
     }
 
     .col-s-12 {
@@ -330,22 +331,22 @@
 }
 
 .right .right-1,
-.right-2 {
+.right2 {
     height: 50%;
 }
 
-.right .right-1 .ads {
+.right .right1 .ads {
     height: 50%;
     justify-content: center;
     align-items: center;
 }
 
-.right .right-1 .ads p:hover {
+.right .right1 .ads p:hover {
     cursor: pointer;
     background-color: rgb(155, 154, 154);
 }
 
-.right .right-1 .ads p {
+.right .right1 .ads p {
     background-color: #f8f6f6;
     height: 100px;
     width: 130px;
@@ -364,6 +365,6 @@
     align-items: center;
 }
 
-#footer #footer-text {
+#footer #footer1 {
     color: #fff;
 }
