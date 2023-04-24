@@ -1,4 +1,4 @@
-@media only screen and (min-width: 741px)  {
+@media only screen and (min-width: 741px) {
     .col-l-1 {
         width: 8.33%;
     }
@@ -102,7 +102,7 @@
         margin-top: 50px;
     }
 
-    .title-content , .content1 , .content2 {
+    .title-content, .content1, .content2 {
         text-align: justify;
         padding: 0px 10px;
     }
@@ -130,6 +130,7 @@
     .right .right-2 {
         background-color: #ffffff;
     }
+
     .right .right-1 .ads {
         height: 100%;
     }
@@ -209,6 +210,7 @@
         height: 580px;
     }
 }
+
 @media only screen and (max-width: 471px) {
     .left {
         height: 100px;
@@ -217,10 +219,12 @@
     .center {
         height: 600px;
     }
-    #header ul li{
+
+    #header ul li {
         display: none;
     }
 }
+
 @media only screen and (max-width: 471px) {
     .left {
         height: 100px;
@@ -229,10 +233,12 @@
     .center {
         height: 750px;
     }
-    #header ul li{
+
+    #header ul li {
         display: none;
     }
 }
+
 * {
     padding: 0px;
     margin: 0px;
@@ -258,6 +264,7 @@
     list-style: none;
     margin-left: 5px;
 }
+
 #header ul li {
     cursor: pointer;
     text-align: center;
@@ -271,7 +278,7 @@
     color: #fff;
 }
 
-#header #bt-login {
+#header #login {
     background-color: rgb(46, 42, 42);
     text-align: center;
     color: #9d9d9d;
@@ -281,7 +288,7 @@
     height: 30px;
 }
 
-#header #bt-login:hover {
+#header #login:hover {
     background-color: #000;
     color: #fff;
     cursor: pointer;
@@ -302,7 +309,7 @@
     width: 100%;
 }
 
-.title-content , .content1 , .content2 {
+.content, .content1, .content2 {
     text-align: justify;
     padding: 0px 10px;
 }
@@ -332,10 +339,12 @@
     justify-content: center;
     align-items: center;
 }
+
 .right .right-1 .ads p:hover {
     cursor: pointer;
     background-color: rgb(155, 154, 154);
 }
+
 .right .right-1 .ads p {
     background-color: #f8f6f6;
     height: 100px;
@@ -345,6 +354,7 @@
     border: 1px #000 ridge;
     border-radius: 3px;
 }
+
 #footer {
     position: fixed;
     bottom: 0px;
