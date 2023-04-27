@@ -1,7 +1,7 @@
-package com.example.calculator;
+package model;
 
 public class Calculator {
-    public static float calculator(float firstOperand, float secondOperand, String operator) {
+    public static float calculator(float firstOperand, float secondOperand, String operator) throws ArithmeticException {
         switch (operator) {
             case "+":
                 return firstOperand + secondOperand;
@@ -11,7 +11,7 @@ public class Calculator {
                 return firstOperand * secondOperand;
             case "/":
                 if (secondOperand == 0) {
-                    throw new RuntimeException("ERROR");
+                    throw new ArithmeticException("Không thể chia cho 0");
                 }
                 return firstOperand / secondOperand;
             default:
