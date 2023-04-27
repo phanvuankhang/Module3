@@ -13,7 +13,7 @@
                 <input type="text" name="productDescription" placeholder="Product Description">
             </td>
         </tr>
-        <tr>
+        <tr>x
             <td>
                 <input type="text" name="listPrice" placeholder="List Price">
             </td>
