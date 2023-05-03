@@ -20,6 +20,11 @@
 <h1 style="text-align: center">Product Management</h1>
 <h2 style="text-align: center">
     <a href="products/create.jsp">Add New Product</a>
+    <form class="d-flex" action="/product" method="get">
+        <input type="hidden" name="action" value="search"/>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="productName" value="${productName}">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 </h2>
 <div align="center">
     <caption><h2>List of Products</h2></caption>

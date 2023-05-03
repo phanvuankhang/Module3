@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/product")
@@ -30,6 +31,17 @@ public class ProductServlet extends HttpServlet {
             case "edit":
                 editProduct(request, response);
                 break;
+            case "search":
+                List<Product> products = new ArrayList<>();
+                String productName = request.getParameter("productName");
+                for (int i = 0; i < productList.size(); i++) {
+                    if(productName.equals(productList.get(i).getName())){
+                        products.add(productList.get(i));
+                    }
+                }
+                request.setAttribute("productList",products);
+                request.getRequestDispatcher("products/list.jsp").forward(request,response);
+                break;
             default:
                 showList(request, response);
         }
@@ -40,7 +52,7 @@ public class ProductServlet extends HttpServlet {
         for (int i = 0; i < productList.size(); i++) {
             if (id == productList.get(i).getId()) {
                 request.setAttribute("id", productList.get(i).getId());
-                request.setAttribute("productName", productList.get(i).getName());
+                request.setAttribute("name", productList.get(i).getName());
                 request.setAttribute("price", productList.get(i).getPrice());
                 request.setAttribute("productDetail", productList.get(i).getProductDetail());
                 request.setAttribute("producer", productList.get(i).getProducer());
