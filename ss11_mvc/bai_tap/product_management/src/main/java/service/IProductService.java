@@ -5,11 +5,12 @@ import model.Product;
 import java.util.List;
 
 public interface IProductService {
+
     List<Product> getAll();
 
-    void saveProduct(Product product);
+    void save(Product product);
 
-    void delete(int id);
+    void delete(int productId);
 
-    void editProduct(Product product);
+    void edit(Product product);
 }

@@ -17,31 +17,33 @@ public class ProductRepository implements IProductRepository {
         productList.add(new Product(5, "Iphone 14", 4000, "Yellow", "Apple"));
     }
 
+
     @Override
     public List<Product> getAll() {
         return productList;
     }
 
     @Override
-    public void saveProduct(Product product) {
+    public void save(Product product) {
         productList.add(product);
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int productId) {
         for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getId() == id) {
+            if (productId == productList.get(i).getId()) {
                 productList.remove(i);
+                break;
             }
         }
     }
 
     @Override
-    public void editProduct(Product product) {
-        int id = product.getId();
+    public void edit(Product product) {
         for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getId() == id) {
+            if (product.getId() == productList.get(i).getId()) {
                 productList.set(i, product);
+                break;
             }
         }
     }

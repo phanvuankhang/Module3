@@ -7,9 +7,9 @@ import java.util.List;
 public interface IProductRepository {
     List<Product> getAll();
 
-    void saveProduct(Product product);
+    void save(Product product);
 
-    void delete(int id);
+    void delete(int productId);
 
-    void editProduct(Product product);
+    void edit(Product product);
 }

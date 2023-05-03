@@ -20,18 +20,20 @@ public class ProductService implements IProductService {
             return productList;
         }
     }
+
     @Override
-    public void saveProduct(Product product) {
-        iProductRepository.saveProduct(product);
+    public void save(Product product) {
+        iProductRepository.save(product);
     }
 
     @Override
-    public void delete(int id) {
-        iProductRepository.delete(id);
+    public void delete(int productId) {
+        iProductRepository.delete(productId);
     }
 
     @Override
-    public void editProduct(Product product) {
-        iProductRepository.editProduct(product);
+    public void edit(Product product) {
+        iProductRepository.edit(product);
     }
+
 }
