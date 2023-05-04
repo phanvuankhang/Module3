@@ -23,3 +23,8 @@ FROM
 DROP VIEW v_nhan_vien;
 
 -- 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu” đối với tất cả các nhân viên được nhìn thấy bởi khung nhìn này.
+SET SQL_SAFE_UPDATES =0;
+UPDATE v_nhan_vien SET dia_chi='Liên Chiểu';
+SET SQL_SAFE_UPDATES =1;
+
+-- 23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng nào đó với ma_khach_hang được truyền vào như là 1 tham số của sp_xoa_khach_hang.

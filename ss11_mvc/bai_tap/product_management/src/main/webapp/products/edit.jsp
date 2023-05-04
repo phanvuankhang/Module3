@@ -23,7 +23,7 @@
         <table border="1" cellpadding="5">
             <tr>
                 <td>
-                    <input type="hidden" name="id" size="45">
+                    <input type="text" hidden  name="id" size="45">
                 </td>
             </tr>
             <tr>
