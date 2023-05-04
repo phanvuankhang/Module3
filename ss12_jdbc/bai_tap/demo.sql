@@ -11,4 +11,3 @@ create table users (
 insert into users(name, email, country) values('Minh','minh@codegym.vn','Viet Nam');
 insert into users(name, email, country) values('Kante','kante@che.uk','Kenia');
 SELECT * FROM users;
-DELETE  FROM users WHERE id=18;
