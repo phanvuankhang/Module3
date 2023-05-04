@@ -29,25 +29,25 @@
             <tr>
                 <th>Product Name:</th>
                 <td>
-                    <input type="text" name="name" size="45">
+                    <input type="text" name="name" size="45" value="${name}">
                 </td>
             </tr>
             <tr>
                 <th>Product Price:</th>
                 <td>
-                    <input type="text" name="price" size="45">
+                    <input type="text" name="price" size="45" value="${price}">
                 </td>
             </tr>
             <tr>
                 <th>Product Detail:</th>
                 <td>
-                    <input type="text" name="productDetail" size="45">
+                    <input type="text" name="productDetail" size="45" value="${productDetail}">
                 </td>
             </tr>
             <tr>
                 <th>Producer:</th>
                 <td>
-                    <input type="text" name="producer" size="45">
+                    <input type="text" name="producer" size="45" value="${producer}">
                 </td>
             </tr>
             <tr>
