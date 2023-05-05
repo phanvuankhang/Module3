@@ -118,10 +118,11 @@ public class UserRepository implements IUserRepositoty {
             preparedStatement.setString(1,country);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
+                int id=resultSet.getInt("id");
                 String name=resultSet.getString("name");
                 String email=resultSet.getString("email");
                 String userCountry=resultSet.getString("country");
-                searchUserList.add(new User(name,email,userCountry));
+                searchUserList.add(new User(id,name,email,userCountry));
             }
         } catch (SQLException e) {
             e.printStackTrace();
