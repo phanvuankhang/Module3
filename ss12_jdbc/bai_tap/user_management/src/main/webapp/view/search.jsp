@@ -32,7 +32,7 @@
       <th>Country</th>
       <th>Actions</th>
     </tr>
-    <c:forEach var="user" items="${userList}">
+    <c:forEach var="user" items="${searchUserList}">
       <tr>
         <td><c:out value="${user.id}"/></td>
         <td><c:out value="${user.name}"/></td>

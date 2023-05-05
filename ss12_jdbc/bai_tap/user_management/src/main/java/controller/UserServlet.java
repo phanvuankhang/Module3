@@ -93,8 +93,8 @@ public class UserServlet extends HttpServlet {
 
     private static void searchUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String country= request.getParameter("country");
-        List<User> userList=userService.search(country);
-        request.setAttribute("userList",userList);
+        List<User> searchUserList=userService.search(country);
+        request.setAttribute("searchUserList",searchUserList);
         request.getRequestDispatcher("view/search.jsp").forward(request, response);
     }
 

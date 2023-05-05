@@ -18,7 +18,7 @@ public class UserRepository implements IUserRepositoty {
     private static final String UPDATE_USERS = "UPDATE users SET name=? ,email=? ,country=? WHERE id=?;";
     private static final String SELECT_USERS_BY_ID = "SELECT id,name,email,country FROM users WHERE id =?;";
     private static final String SEARCH_USERS = "SELECT * FROM users u WHERE u.country=?;";
-    private static final String ORDER_USERS = "SELECT * FROM users  ORDER BY `name`;";
+    private static final String SORT_USERS = "SELECT * FROM users  ORDER BY `name`;";
 
     @Override
     public boolean insertUser(User user) {
@@ -131,21 +131,21 @@ public class UserRepository implements IUserRepositoty {
 
     @Override
     public List<User> sort() {
-        List<User> orderUserList=new ArrayList<>();
+        List<User> sortUserList=new ArrayList<>();
         Connection connection=BaseRepository.getConnectDB();
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement(ORDER_USERS);
+            PreparedStatement preparedStatement=connection.prepareStatement(SORT_USERS);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id=resultSet.getInt("id");
                 String name=resultSet.getString("name");
                 String email=resultSet.getString("email");
                 String country=resultSet.getString("country");
-                orderUserList.add(new User(id,name,email,country));
+                sortUserList.add(new User(id,name,email,country));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return orderUserList;
+        return sortUserList;
     }
 }

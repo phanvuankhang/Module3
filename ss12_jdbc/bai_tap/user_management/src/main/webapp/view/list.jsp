@@ -21,10 +21,10 @@
 <div align="center">
     <form action="/user?action=search" method="post">
         <input type="text" name="country" placeholder="Search follow country">
-        <input type="submit" value="Search" >
+        <input type="submit" value="Search">
     </form>
     <form action="/user?action=sort" method="post">
-        <input type="submit" value="Sort Name Users" >
+        <input type="submit" value="Sort Name Users">
     </form>
     <table border="1" cellpadding="5">
         <caption><h2>List of Users</h2></caption>
