@@ -78,23 +78,23 @@ public class UserServlet extends HttpServlet {
                 updateUsers(request, response);
                 break;
             case "search":
-                searchUsers(request, response);
+                searchByCountry(request, response);
                 break;
             case "sort":
-                sortUsers(request, response);
+                sortByName(request, response);
                 break;
         }
     }
 
-    private static void sortUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> sortUserList = userService.sort();
+    private static void sortByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<User> sortUserList = userService.sortByName();
         request.setAttribute("sortUserList", sortUserList);
         request.getRequestDispatcher("view/sort.jsp").forward(request, response);
     }
 
-    private static void searchUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private static void searchByCountry(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String country = request.getParameter("country");
-        List<User> searchUserList = userService.search(country);
+        List<User> searchUserList = userService.searchCountry(country);
         request.setAttribute("searchUserList", searchUserList);
         request.getRequestDispatcher("view/search.jsp").forward(request, response);
     }

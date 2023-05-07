@@ -5,7 +5,7 @@ import model.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IUserRepositoty {
+public interface IUserRepository {
     boolean insertUser(User user) throws SQLException;
 
     User selectUser(int id);
@@ -16,7 +16,7 @@ public interface IUserRepositoty {
 
     boolean updateUser(User user) throws SQLException;
 
-    List<User> search(String country);
+    List<User> searchCountry(String country);
 
-    List<User> sort();
+    List<User> sortByName();
 }

@@ -2,7 +2,7 @@ package repository.impl;
 
 import model.User;
 import repository.BaseRepository;
-import repository.IUserRepositoty;
+import repository.IUserRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRepository implements IUserRepositoty {
+public class UserRepository implements IUserRepository {
     private static final String SELECT_ALL_USERS = "SELECT * FROM users;";
     private static final String INSERT_INTO_USERS = "INSERT INTO users(name, email, country) VALUES (?,?,?);";
     private static final String DELETE_USERS = "DELETE FROM users WHERE id=?;";
@@ -110,7 +110,7 @@ public class UserRepository implements IUserRepositoty {
     }
 
     @Override
-    public List<User> search(String country) {
+    public List<User> searchCountry(String country) {
         List<User> searchUserList=new ArrayList<>();
         Connection connection=BaseRepository.getConnectDB();
         try {
@@ -131,7 +131,7 @@ public class UserRepository implements IUserRepositoty {
     }
 
     @Override
-    public List<User> sort() {
+    public List<User> sortByName() {
         List<User> sortUserList=new ArrayList<>();
         Connection connection=BaseRepository.getConnectDB();
         try {
